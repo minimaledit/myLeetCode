@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int getWinner(vector<int>& arr, int k) {
+        int counter = 0;
+        int leftNum = arr[0];
+        for(int i = 1;i <= arr.size(); ++i){
+            if(leftNum < arr[i]){
+                leftNum = arr[i];
+                counter = 1;
+            }else{
+                counter++;
+            }
+            if(counter == k){
+                break;
+            }
+        }
+        return leftNum;
+    }
+};
