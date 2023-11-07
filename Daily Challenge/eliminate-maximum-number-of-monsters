@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int eliminateMaximum(vector<int>& dist, vector<int>& speed) {
+        ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
+        int n = dist.size();
+        vector<float> monster;
+        for(int i = 0; i < n; ++i){
+            monster.push_back((float)dist[i] / speed[i]);
+        }
+        sort(monster.begin(),monster.end());
+        int ans = 0;
+        for(int i = 0; i < n; ++i){
+            if(monster[i] > i){
+                ans++;
+            }else break;
+        }
+        return ans;
+    }
+};
