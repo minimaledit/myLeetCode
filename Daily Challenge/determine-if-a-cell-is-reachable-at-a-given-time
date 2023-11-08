@@ -1,0 +1,12 @@
+class Solution {
+public:
+    bool isReachableAtTime(int sx, int sy, int fx, int fy, int t) {
+        if(sx==fx and sy==fy and t==1){
+            return false;
+        }
+        int minDist = max(abs(fy-sy),abs(fx-sx));
+        if(minDist > t){
+            return false;
+        }else return true;
+    }
+};
