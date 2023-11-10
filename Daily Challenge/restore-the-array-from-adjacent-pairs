@@ -1,0 +1,27 @@
+class Solution {
+public:
+    map<int, vector<int>> graph;
+    vector<int> ans; 
+    vector<int> restoreArray(vector<vector<int>>& adjacentPairs) {
+        for(auto a : adjacentPairs){
+            graph[a[0]].push_back(a[1]);
+            graph[a[1]].push_back(a[0]);
+        }
+        int root = 0;
+        for(auto a : graph){
+            if(a.second.size() == 1){
+                root = a.first;
+            }
+        }
+        obhod(root, INT_MAX);
+        return ans;
+    }
+    void obhod(int node, int prev) {
+        ans.push_back(node);
+        for (int neighbor : graph[node]) {
+            if (neighbor != prev) {
+                obhod(neighbor, node);
+            }
+        }
+    }
+};
