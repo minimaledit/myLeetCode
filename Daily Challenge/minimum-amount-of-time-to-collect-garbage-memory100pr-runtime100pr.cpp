@@ -4,13 +4,12 @@ public:
          ios::sync_with_stdio(false);
         cin.tie(0);
         cout.tie(0);
-        int m,p,g;
-        int n = garbage.size();
+        char m,p,g;
         int maxM = 0;
         int maxP = 0;
         int maxG = 0;
         int ans = 0;
-        for(int i = 0;i < n;++i){
+        for(int i = 0;i < garbage.size();++i){
             m = 0;
             p = 0;
             g = 0;
