@@ -10,19 +10,19 @@ Return k.
 */
 func removeDuplicates(nums []int) int {
 	n := len(nums)
-  if n == 0 {
-    return 0
-  }
-	var j int
+	if n == 0 {
+		return 0
+	}
+	var k int
 	ans := make([]int, n)
 	for i := 0; i < n-1; i++ {
 		if nums[i] != nums[i+1] {
-			ans[j] = nums[i]
-			j++
+			ans[k] = nums[i]
+			k++
 		}
 	}
-	ans[j] = nums[n-1]
-	j++
-	copy(nums, ans[:j])
-	return j
+	ans[k] = nums[n-1]
+	k++
+	copy(nums, ans[:k])
+	return k
 }
