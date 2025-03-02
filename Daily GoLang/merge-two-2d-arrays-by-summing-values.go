@@ -16,16 +16,11 @@ Return the resulting array. The returned array must be sorted in ascending order
 // First attempt O(N1 + N2 + 1000), simpler solution
 func mergeArrays1(nums1 [][]int, nums2 [][]int) [][]int {
 	numCounter := make([]int, 1001)
-	var id, value int
 	for i := 0; i < len(nums1); i++ {
-		id = nums1[i][0]
-		value = nums1[i][1]
-		numCounter[id] += value
+		numCounter[nums1[i][0]] += nums1[i][1] // numCounter[id] += value
 	}
 	for i := 0; i < len(nums2); i++ {
-		id = nums2[i][0]
-		value = nums2[i][1]
-		numCounter[id] += value
+		numCounter[nums2[i][0]] += nums2[i][1] // numCounter[id] += value
 	}
 	var mergedArray [][]int
 	for i := 1; i <= 1000; i++ {
