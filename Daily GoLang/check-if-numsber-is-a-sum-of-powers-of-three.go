@@ -6,11 +6,9 @@ Explanation: 12 = 3^1 + 3^2
 */
 // The number can not be represented as a sum of powers of 3 if it's ternary presentation has a 2 in it
 func checkPowersOfThree(n int) bool {
-    var ost int
     flag := true
     for n!=0 {
-        ost = n % 3
-        if ost == 2{
+        if n % 3 == 2{
             flag = false
             n = 0
         }
