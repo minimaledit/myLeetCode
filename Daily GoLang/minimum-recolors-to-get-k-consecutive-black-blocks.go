@@ -12,8 +12,8 @@ One way to achieve 7 consecutive black blocks is to recolor the 0th, 3rd, and 4t
 so that blocks = "BBBBBBBWBW". 
 It can be shown that there is no way to achieve 7 consecutive black blocks in less than 3 operations.
 */
-
-func minimumRecolors(blocks string, k int) int {
+// O(N+M)
+func minimumRecolors1(blocks string, k int) int {
     var whiteCount int
     minRecolors := 100
     for i:=0;i<=len(blocks)-k;i++{
@@ -29,3 +29,23 @@ func minimumRecolors(blocks string, k int) int {
     }
     return minRecolors
 }
+
+//O(N)
+func minimumRecolors(blocks string, k int) int {
+    var whiteCount, left int
+    minRecolors := 100
+    for right:=0;right<len(blocks);right++{
+        if blocks[right]=='W'{
+            whiteCount++
+        }
+        if right - left == k - 1 {
+            if(whiteCount<minRecolors){
+                minRecolors = whiteCount
+            }
+            if blocks[left] == 'W'{
+                whiteCount--
+            }
+            left++
+        }
+    }
+    return minRecolors
