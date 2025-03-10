@@ -3,6 +3,13 @@ https://leetcode.com/problems/count-of-substrings-containing-every-vowel-and-k-c
 
 You are given a string word and a non-negative integer k.
 Return the total number of substrings of word that contain every vowel ('a', 'e', 'i', 'o', and 'u') at least once and exactly k consonants.
+
+Input: word = "ieaouqqieaouqq", k = 1  Output: 3
+Explanation:
+The substrings with every vowel and one consonant are:
+word[0..5], which is "ieaouq".
+word[6..11], which is "qieaou".
+word[7..12], which is "ieaouq".
 */
 func countOfSubstrings(word string, k int) int64 {
     // Массив для хранения последних позиций каждой гласной
