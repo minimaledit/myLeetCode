@@ -9,6 +9,8 @@ Example:
 Input: nums = [-3,-2,-1,0,0,1,2] Output: 3
 Explanation: There are 2 positive integers and 3 negative integers. The maximum count among them is 3.
 */
+
+// O(logN)
 func maximumCount(nums []int) int {
     return max(len(nums) - upperBound(nums, 0), lowerBound(nums,0))
 }
